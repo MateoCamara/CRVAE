@@ -1,0 +1,15 @@
+# CRVAE dependencies. This is legacy research code: it needs Python 3.7 and the
+# TensorFlow 1.x graph API (used through tensorflow.compat.v1). TensorFlow 1.15 is
+# the last TF1 release and only provides wheels for Python <= 3.7.
+#
+# numpy and scipy are upper-bounded to stay compatible with TensorFlow 1.15 and with
+# the legacy APIs the code relies on: np.complex (removed in NumPy 1.24) and the
+# scipy.fft / scipy.ifft function interface (changed in SciPy 1.4) used in
+# tools/audio.py.
+#
+# These versions match the original environment and were not re-verified to install
+# on current systems.
+tensorflow==1.15.*
+numpy<1.19
+scipy<1.4
+six
