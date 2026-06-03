@@ -1,3 +1,11 @@
+"""Cost functions for the complex-valued VAE.
+
+Implements the dimension-wise complex Gaussian KL divergence (``cmplx_kld``), the
+complex normal log-likelihood (``log_cmplx_normal``) and the reparameterised
+samplers for complex (``sample_cmplx_Gaussian``) and real (``sample_real_Gaussian``)
+Gaussians, following Xie et al., "Complex Recurrent Variational Autoencoder for
+Speech Enhancement" (arXiv:2204.02195).
+"""
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function

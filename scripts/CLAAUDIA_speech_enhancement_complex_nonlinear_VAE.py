@@ -1,7 +1,15 @@
 
-# train encoder + decoder according to noisy speech
-# mix noisy training set
-# complex128 calculation
+"""Speech enhancement with a complex (non-recurrent) VAE baseline.
+
+Same training/evaluation pipeline as the recurrent model, but the encoder and
+decoder are complex fully-connected layers (``ComplexDense``) with a ``mod_relu``
+non-linearity instead of Stiefel complex GRUs. Operates on complex STFT spectra
+(complex128) using the complex reparameterisation trick (``sample_cmplx_Gaussian``)
+and the complex KL divergence (``cmplx_kld``).
+
+Set the empty ``*_path`` configuration variables below before running. Requires
+Python 3.7 and TensorFlow 1.15 (see README and requirements.txt).
+"""
 
 import os
 import shutil

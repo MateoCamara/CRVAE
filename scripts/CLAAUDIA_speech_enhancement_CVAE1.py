@@ -1,7 +1,14 @@
-# speech enhancement_CVAE1
-# train encoder + decoder simultaneously according to noisy speech
-# mix noisy training set
-# complex128 calculation
+"""Speech enhancement with the complex recurrent VAE (SECRVAE).
+
+Trains the encoder and decoder jointly on noisy speech (mixed noise types) and then
+enhances the test set, operating on complex STFT spectra (complex128). The latent
+posterior is drawn with the complex reparameterisation trick
+(``sample_cmplx_Gaussian``) and regularised with the complex KL divergence
+(``cmplx_kld``); the encoder and decoder are Stiefel-constrained complex GRUs (SGRU).
+
+Set the empty ``*_path`` configuration variables below before running. Requires
+Python 3.7 and TensorFlow 1.15 (see README and requirements.txt).
+"""
 
 
 import os
