@@ -12,7 +12,7 @@ import tensorflow.compat.v1 as tf
 
 from runners import *
 from collections import OrderedDict
-from libs.costs import cmplx_kld, sample_cmplx_Guassian
+from libs.costs import cmplx_kld, sample_cmplx_Gaussian
 from complexnn.complex_dense_dtype import ComplexDense
 import random
 from tensorflow.python import debug as tf_debug
@@ -119,7 +119,7 @@ class SECRVAE(object):
         z_mu = z_para[:, :self._model_conf['n_latent']]
         z_r = z_para[:, (self._model_conf['n_latent']):(self._model_conf['n_latent'] * 2)]
         z_s = z_para[:, (self._model_conf['n_latent'] * 2):]
-        z = sample_cmplx_Guassian(z_mu, z_r, z_s)
+        z = sample_cmplx_Gaussian(z_mu, z_r, z_s)
         print('Enc: z ', z)
         return [z_mu, z_r, z_s], z
 

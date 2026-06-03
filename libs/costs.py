@@ -62,7 +62,7 @@ def log_cmplx_normal(x):
 
 
 # float64-version sample complex Gaussian
-def sample_cmplx_Guassian(mu, r, s):
+def sample_cmplx_Gaussian(mu, r, s):
     ''''
     input(complex values)
         mu -> mean
